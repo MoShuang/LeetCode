@@ -18,3 +18,35 @@ Time：O(n)
 Space：O(n)
 TestRuntime：55ms
 '''
+
+"""对于注释双引号能够包含单引号
+以下为自己的python解法：
+class Solution:
+    def partitionLabels(self, S):
+        """
+        :type S: str
+        :rtype: List[int]
+        """
+        last = {}
+        ans = []
+        for i in range(len(S)): last[S[i]] = i
+        length = last[S[0]]
+        for j in range(len(S)): 
+            if(length < last[S[j]]): length = last[S[j]]
+            elif(j == length and last[S[j]] == length): 
+                ans.append(length)
+                if(j == len(S)-1): break
+                length = last[S[j+1]] #该段报错字符串索引超出范围:取值时进行判断
+        '''
+
+        k = len(ans)
+        while(k > 0):
+            ans[k] = ans[k] - ans[k-1] #报错列表索引超出范围:不是0超出范围，而是len(ans)为长度，比位置大1超出了
+            k = k - 1
+            
+        ans[0] = ans[0] + 1
+        '''   
+        for i in range(len(ans)-1,0,-1): ans[i] = ans[i] - ans[i-1]
+        ans[0] = ans[0] + 1
+        return ans
+"""
