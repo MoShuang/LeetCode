@@ -32,3 +32,16 @@ public:
         return ans;
     }
 };
+
+/*
+别人的答案：思路相同，但是代码简略得多
+vector<int> partitionLabels(string S) {
+  vector<int> res, pos(26, 0);  直接用长度为26的vector充当字典
+  for (auto i = 0; i < S.size(); ++i) pos[S[i] - 'a'] = i; 
+  for (auto i = 0, idx = INT_MIN, last_i = 0; i < S.size(); ++i) {
+    idx = max(idx, pos[S[i] - 'a']); 直接使用内置函数max
+    if (idx == i) res.push_back(i - exchange(last_i, i + 1) + 1); vector的插入元素方法push_back
+  }
+  return res;
+}
+*/
