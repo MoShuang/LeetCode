@@ -13,7 +13,7 @@ class Solution(object):
 
         #依次对每个单词的遍历，按第一个字母选择可能所在行，结合其后字母继续判断
         for word in words:
-            if word[0].lower() in r1:
+            if word[0].lower() in r1: #大小写不计 
                 for letter_idx in range(len(word)):
                     if word[letter_idx].lower() not in r1:
                         flag = False
