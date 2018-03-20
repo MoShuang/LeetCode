@@ -6,14 +6,11 @@ There are implement codes for the questions in Leetcode.
  - 例如Q338_CountingBits.py
  - 文件注释应包括算法思想、时间、空间复杂度以及具体运行时间（sample或submit）
  - 代码内注释：
-     1. 单行
-`1.
- #python 
-2.
- //CPP
-`
+     1. 单行 `1.#python 2.//CPP`
+
      2. 多行
-```1.
+```
+1.
    " " "
    Python
    " " "
